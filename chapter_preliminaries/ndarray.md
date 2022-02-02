@@ -355,8 +355,31 @@ a, b
 ```
 
 由于`a`和`b`分别是$3\times1$和$1\times2$矩阵，如果让它们相加，它们的形状不匹配。
-我们将两个矩阵*广播*为一个更大的$3\times2$矩阵，如下所示：矩阵`a`将复制列，
+我们将两个矩阵*广播*为一个更大的$3\times2$矩阵，如 :eqref:`broadcast` 所示：矩阵`a`将复制列，
 矩阵`b`将复制行，然后再按元素相加。
+
+$$
+a\to
+\begin{bmatrix}
+0 & 0 \\
+1 & 1 \\
+2 & 2 \\
+\end{bmatrix}
+\enspace ,\enspace
+b\to
+\begin{bmatrix}
+0 & 1 \\
+0 & 1 \\
+0 & 1 \\ 
+\end{bmatrix}
+\enspace \to a + b = 
+\begin{bmatrix}
+0 & 1 \\
+1 & 2 \\
+2 & 3 \\ 
+\end{bmatrix}
+$$
+:eqlabel:`broadcast`
 
 ```{.python .input}
 #@tab all
